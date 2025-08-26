@@ -1,0 +1,140 @@
+<html>
+<head>
+    <title>Student Form Data</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            margin: 0;
+            padding: 0;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 28px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .container {
+            width: 400px;
+            margin: 30px auto;
+            background-color: #fff8f0;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .container label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .container input[type="text"],
+        .container input[type="number"],
+        .container input[type="email"],
+        .container input[type="password"],
+        .container input[type="date"],
+        .container select,
+        .container textarea {
+            width: 100%;
+            padding: 8px 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .container input:focus,
+        .container select:focus,
+        .container textarea:focus {
+            border-color: #ff9966;
+            box-shadow: 0 0 5px #ff9966;
+        }
+
+        .radio-group {
+            margin-top: 10px;
+        }
+
+        .radio-group input {
+            margin-right: 6px;
+        }
+
+        .container input[type="submit"] {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #ff7e5f;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .container input[type="submit"]:hover {
+            background: #ff6333;
+        }
+    </style>
+</head>
+<body>
+    <h3>Student Form</h3>
+    <form id="regForm">
+        <div class="container">
+            <label>First Name:</label>
+            <input type="text" placeholder="Enter first name">
+
+            <label>Last Name:</label>
+            <input type="text" placeholder="Enter last name">
+
+            <label>Phone Number:</label>
+            <input type="number" placeholder="Enter your number">
+
+            <label>Gender:</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="male"> Male 
+                <input type="radio" id="female" name="gender" value="female"> Female
+                <input type="radio" id="others" name="gender" value="others"> Others
+            </div>
+
+            <label>Language:</label>
+            <div class="radio-group">
+                <input type="radio" id="Telugu" name="Language" value="Telugu"> Telugu
+                <input type="radio" id="Hindi" name="Language" value="Hindi"> Hindi
+                <input type="radio" id="English" name="Language" value="English"> English
+            </div>
+
+            <label>Date:</label>
+            <input type="date">
+
+            <label>Friends Names:</label>
+            <select>
+                <option>Harini</option>
+                <option>Bhavya</option>
+                <option>Ambhica</option>
+                <option>Gowi</option>
+                <option>Parveen</option>
+                <option>Anu</option>
+                <option>Siri</option>
+                <option>Parimila</option>
+            </select>
+
+            <label>Email:</label>
+            <input type="email" placeholder="Enter your mail">
+
+            <label>Password:</label>
+            <input type="password" placeholder="Enter your password">
+
+            <label>Message:</label>
+            <textarea cols="30" rows="3"></textarea>
+
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>
