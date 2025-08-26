@@ -1,0 +1,24 @@
+<html>
+
+    <head>
+        <title>Quote of the Day</title>
+    </head>
+    <body>
+        <h2>Quote of the Day</h2>
+         <button onclick="getQuoteThen()">Get Quote (fetch().then())</button>
+        <pre id="output2"></pre>
+        <script>
+             function getQuoteThen() {
+                let url = "https://api.adviceslip.com/advice";
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        let quote = data.slip.advice;
+                        document.getElementById("output2").textContent =
+                            "Quote of the Day: " + quote;
+                    })
+                    
+            }
+        </script>
+    </body>
+</html>

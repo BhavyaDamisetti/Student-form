@@ -1,0 +1,22 @@
+<html>
+
+    <head>
+        <title>Quote of the Day</title>
+    </head>
+    <body>
+        <h2>Quote of the Day</h2>
+
+        <button onclick="getQuoteAsync()">Get Quote (async/await)</button>
+        <pre id="output1"></pre>
+        <script>
+            async function getQuoteAsync() {
+                let url = "https://api.adviceslip.com/advice";
+                let value = await fetch(url);
+                let data = await value.json();
+                let quote = data.slip.advice;
+                document.getElementById("output1").textContent =
+                    "Quote of the Day: " + quote;
+            }
+        </script>
+    </body>
+</html>

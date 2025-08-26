@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+        <button id="resetBtn">Reset</button>
+        <script>
+            const startBtn = document .getElementById("startBtn");
+            const stopBtn = document .getElementById("stopBtn");
+            const resetBtn = document .getElementById("resetBtn");
+            function random(max){
+                return Math.floor(Math.random() * max);
+            }
+            function changeBackground(){
+                const r=random(255)
+                const g=random(255)
+                const b=random(255)
+                document.body.style.backgroundColor="rgb(" + r + "," + g + ","+ b + ")";
+            }
+            function resetBackground(){
+                document.body.style.backgroundColor="black";
+            }
+            startBtn.addEventListener("click", ()=>{
+                document.addEventListener("mousemove", changeBackground);
+            });
+            stopBtn.addEventListener("click", ()=>{
+                document.removeEventListener("mousemove", changeBackground);
+            });
+            resetBtn.addEventListener("click", resetBackground);
+
+        </script>
+    </body>
+</html>

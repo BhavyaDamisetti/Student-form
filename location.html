@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Weather</title>
+    </head>
+    <body>
+        <h2>Weather App</h2>
+        <input type="text" id="city" placeholder="Enter city Name">
+        <button onclick="getWeather()">Get Weather</button>
+        <pre id="output"></pre>
+        <pre id="output1"></pre>
+        <pre id="output2"></pre>
+        
+        <script>
+            async function getWeather(){
+                let city = document.getElementById("city").value || "Bangalore";
+
+                let geoUrl = "https://geocoding-api.open-meteo.com/v1/search?name=" + city;
+                let geoRes = await fetch(geoUrl);
+                let geoData = await geoRes.json();
+
+                if(!geoData.results || geoData.results.length === 0){
+                    document.getElementById("output").textContent = "City not found!";
+                    return;
+                }
+                let latitude = geoData.results[0].latitude;
+                let longitude = geoData.results[0].longitude;
+                let country = geoData.results[0].country;
+                document.getElementById("output").textContent = "Location: " + city + ", " + country;
+                document.getElementById("output1").textContent="latitude: "+latitude+".";
+                document.getElementById("output2").textContent="longitude: "+longitude+".";
+            } 
+        </script>
+    </body>
+</html>
